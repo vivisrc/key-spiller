@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'key-spiller'",
+      "cargo": {
+        "args": ["build", "--bin=key-spiller", "--package=key-spiller"],
+        "filter": {
+          "name": "key-spiller",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'key-spiller'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=key-spiller",
+          "--package=key-spiller"
+        ],
+        "filter": {
+          "name": "key-spiller",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
